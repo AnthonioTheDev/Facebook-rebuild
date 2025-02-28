@@ -1,0 +1,49 @@
+/* anim.css */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    /* Ensure the login form is above the logo */
+}
+
+.logo-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    /* Adjust based on your logo size */
+    height: 100px;
+    z-index: 1;
+    /* Lower than the login form */
+    animation: diagonalMotion 8s linear infinite;
+    /* Adjusted duration */
+}
+
+@keyframes diagonalMotion {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        /* Start at top-left */
+    }
+
+    50% {
+        transform: translate(calc(100vw - 100px), calc(100vh - 100px)) rotate(360deg);
+        /* Move to bottom-right */
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+        /* Return to top-left */
+    }
+}
